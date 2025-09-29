@@ -5,7 +5,7 @@ from BaseSeleniumFramework.Utils import config
 
 
 class Driver:
-    _instance = None
+    _driver = None
 
     @classmethod
     def get_driver(cls):

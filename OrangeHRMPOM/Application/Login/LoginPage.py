@@ -4,10 +4,10 @@ from BaseSeleniumFramework.Utils import config
 
 
 class LoginPage(BasePage):
-    username = (By.ID, "txtUsername")
-    password = (By.ID, "txtPassword")
-    login_btn = (By.ID, "btnLogin")
-    error_msg = (By.ID, "spanMessage")
+    username = (By.NAME, "username")
+    password = (By.NAME, "password")
+    login_btn = (By.CSS_SELECTOR, ".orangehrm-login-button")
+    error_msg = (By.CSS_SELECTOR, ".oxd-alert-content--error")
 
     def goto(self):
         self.open(config.BASE_URL)
@@ -20,4 +20,9 @@ class LoginPage(BasePage):
         self.click(self.login_btn)
 
     def get_error_message(self):
-        return self.get_text(self.error_msg)
+        msg = ""
+        try:
+            msg = self.get_text(self.error_msg)
+        except Exception as e:
+            pass
+        return msg

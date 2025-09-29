@@ -6,4 +6,4 @@ from BaseSeleniumFramework.Driver import Driver
 def driver():
     driver = Driver().get_driver()
     yield driver
-    driver.quit_driver()
+    Driver().quit_driver()
