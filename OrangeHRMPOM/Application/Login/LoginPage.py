@@ -8,6 +8,7 @@ class LoginPage(BasePage):
     password = (By.NAME, "password")
     login_btn = (By.CSS_SELECTOR, ".orangehrm-login-button")
     error_msg = (By.CSS_SELECTOR, ".oxd-alert-content--error")
+    forgot_password_lnk = (By.CSS_SELECTOR, ".orangehrm-login-forgot-header")
 
     def goto(self):
         self.open(config.BASE_URL)
@@ -26,3 +27,6 @@ class LoginPage(BasePage):
         except Exception as e:
             pass
         return msg
+
+    def click_forgot_password(self):
+        self.click(self.forgot_password_lnk)
