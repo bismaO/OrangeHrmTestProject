@@ -24,3 +24,17 @@ class BasePage:
 
     def get_text(self, locator):
         return self.find(locator).text
+
+    def wait_for_element_presence(self,by):
+        self.wait.until(EC.presence_of_element_located(by))
+
+    def wait_for_element_visible(self,by):
+        self.wait.until(EC.visibility_of_element_located(by))
+
+    def wait_and_click(self,by):
+        self.wait.until(EC.presence_of_element_located(by))
+        self.driver.find_element(*by).click()
+
+    def wait_and_sendkeys(self,by,message):
+        self.wait.until(EC.presence_of_element_located(by))
+        self.driver.find_element(*by).send_keys(message)
