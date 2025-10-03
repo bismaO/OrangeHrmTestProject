@@ -15,8 +15,9 @@ class Test_Add_Employee:
         emp.add_name(middlename="asp456",lastname="asp789")
         emp.upload_profile_picture(r"C:\MY SPACE\TEST GENERIC ASSETS\JLR Assets 1\Test_asp.jpeg")
         emp.toggle_switch_login_details()
-        emp.enter_login_details(username="asp123",password="asp456",confirm_password="asp456")
-        time.sleep(5)
+        emp.enter_login_details(username="asp123",password="asp456",confirm_password= "asp456")
+        emp.click_save_employee_button()
+
 
 
 
